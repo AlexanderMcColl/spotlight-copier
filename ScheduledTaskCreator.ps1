@@ -1,4 +1,4 @@
-# As long as you've stored both .ps1 files in the same folder, this automatically fetches the correct path to create the Schedueld Task
+# As long as you've stored both .ps1 files in the same folder, this automatically fetches the correct path to create the Scheduled Task
 $thisFilePath = Split-Path $MyInvocation.MyCommand.Path -Parent
 $scriptFilePath = $thisFilePath + "\SpotlightCopier.ps1"
 $scriptFilePathQuoted = """$($scriptFilePath)"""
