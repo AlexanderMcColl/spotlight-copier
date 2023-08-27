@@ -1,12 +1,12 @@
 # spotlight-copier
 
-Copy wallpapers from Windows Spotlight the lockscreen folder so you can use them as your own wallpapers and backgrounds.
+Copy wallpapers from the Windows Spotlight lockscreen folder so you can use them as your own wallpapers and backgrounds.
 
 It has been tested on Windows 10 and 11.
 
 ## Background
 
-Windows Spotlight gives you new landscape wallpapers every day, but only for your lockscreen, and then deletes them a few days later
+Windows Spotlight gives you new landscape wallpapers every day then deletes them a few days later.
 
 I like to use these wallpapers in a folder that the built-in Windows wallpaper slideshow cycles through every day.
 
