@@ -7,7 +7,7 @@ $portraitFolder = $workingFolder + "Portrait\"
 $ext = ".jpg"
 $copiedFiles = @{}
 
-# Copy all files out of the Spotlight folder that are greater than 200KB.
+# Copy all files out of the Spotlight folder that are greater than 120KB.
 # Record the filename as a hashtable key, and record the width and height of the image as values associated with that key.
 foreach ($file in Get-ChildItem -Path $spotlightFolder) {
     if ($file.length -gt 200KB) {
