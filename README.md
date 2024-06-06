@@ -22,8 +22,7 @@ This script creates a scheduled task to run SpotlightCopier.ps1 on system logon.
 
 This script runs 3 loops.
 
-First it enumerates all the files in the Windows Spotlight images folder that are over 200KB in size into a hashtable and copies them to a working folder of your choice. I recommend this being a folder you don't use, which has two subfolders - Landscape and Portrait. They'll be used later for sorting the images.\
-(On Windows 10 this folder has some random small files in it, but all the Spotlight images are a few hundred KB to 1-2MB in size)
+First it enumerates all the files in the Windows Spotlight images folder that are over 200KB in size into a hashtable and copies them to a working folder of your choice. I recommend this being a folder you don't use, which has two subfolders - Landscape and Portrait. They'll be used later for sorting the images.
 
 Then it loops through the hashtable and renames the files it copied into the working folder to give them a .jpg extension. They're stored by Windows without an extension.
 

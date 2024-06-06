@@ -9,17 +9,17 @@ $copiedFiles = @{}
 
 # Copy all files out of the Spotlight folder that are greater than 120KB.
 # Record the filename as a hashtable key, and record the width and height of the image as values associated with that key.
-foreach ($file in Get-ChildItem -Path $spotlightFolder -File) {
-    $fileName = $file.Name
+foreach ($file in Get-ChildItem -Path $spotlightFolder) {
     if ($file.length -gt 200KB) {
-        # Write-Output "I found a file"
-        $imageFile = $imageFile = $file.FullName
-        $imageObj = [System.Drawing.Bitmap]::FromFile($imageFile)
+        # Debugging: Write-Output "found an image to copy"
+        $imageFile = $spotlightFolder + $file
+        Add-Type -AssemblyName System.Drawing
+        $imageObj = New-Object System.Drawing.Bitmap $imageFile
         $imageWidth = $imageObj.Width
         $imageHeight = $imageObj.Height
-        $copiedFiles.$fileName = @()
-        $copiedFiles.$fileName += $imageWidth
-        $copiedFiles.$fileName += $imageHeight
+        $copiedFiles.$file = @()
+        $copiedFiles.$file += $imageWidth
+        $copiedFiles.$file += $imageHeight
         Copy-Item $imageFile -Destination $workingFolder
     }
 }
@@ -61,6 +61,8 @@ foreach ($h in $copiedFiles.GetEnumerator() ) {
     }
     else {
         Remove-Item $imageExt
-        # Write-Output "I deleted a file because it was a duplicate"
+        # Debugging: Write-Output "deleted an image because it was a duplicate"
     }
+    
 }
+# Debugging: timeout /t 10 > $null
